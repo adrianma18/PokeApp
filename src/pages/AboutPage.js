@@ -1,11 +1,4 @@
-import {
-  Avatar,
-  Button,
-  Card,
-  CardContent,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Button, Card, CardContent, Stack, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
@@ -18,6 +11,14 @@ export const AboutPage = () => {
 
   const clickHomeHandler = (e) => {
     navigate("/");
+  };
+
+  const handleGitClick = () => {
+    window.open("https://github.com/adrianma18/PokeApp");
+  };
+
+  const handlePortfolioClick = () => {
+    window.open("https://adrianmarten.com");
   };
 
   return (
@@ -61,14 +62,22 @@ export const AboutPage = () => {
             <Typography m={2} variant="h5">
               • Material UI
             </Typography>
-
-            <Typography ml={7} mt={8} variant="h4" component="div">
-              <GitHubIcon fontSize="large" /> Github
-            </Typography>
-
-            <Typography ml={7} mt={9} variant="h4" component="div">
-              <FolderSpecialIcon fontSize="large" /> Portfolio
-            </Typography>
+            <Stack mt={8} spacing={4}>
+              <Button
+                onClick={handleGitClick}
+                variant="outlined"
+                size="large"
+                endIcon={<GitHubIcon />}>
+                Github
+              </Button>
+              <Button
+                onClick={handlePortfolioClick}
+                variant="outlined"
+                size="large"
+                endIcon={<FolderSpecialIcon />}>
+                Portfolio
+              </Button>
+            </Stack>
           </CardContent>
         </Card>
       </Stack>
