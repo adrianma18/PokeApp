@@ -11,7 +11,7 @@ Application that uses PokeApi to display pokemon information.
 Install my-project with npm
 
 ```bash
-  npm install pokeapi
+  npm install
   cd pokeapi
 ```
 
